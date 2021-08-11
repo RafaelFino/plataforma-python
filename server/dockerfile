@@ -1,17 +1,12 @@
 FROM python:3
 
-RUN mkdir /opt/app
+RUN mkdir /opt/server
 
-COPY requirements.txt /opt/app
-COPY . /opt/app
-
-RUN mkdir /var/log/app
+RUN mkdir /var/log/server
 
 WORKDIR /opt/app
 
-RUN pip install --no-cache-dir -r requirements.txt
-
 EXPOSE 8080
 
-CMD [ "/opt/app/run.sh" ]
+CMD [ "/opt/server/run.sh" ]
 

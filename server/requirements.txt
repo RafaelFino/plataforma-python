@@ -1,4 +1,4 @@
 uvicorn
 fastapi
 requests
-
+psycopg2
