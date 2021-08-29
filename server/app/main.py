@@ -7,4 +7,4 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"cardapio": [ "churrasco", "feijoada" ]}
+    return {"cardapio": [ "churrasco", "feijoada", "pastel" ]}
