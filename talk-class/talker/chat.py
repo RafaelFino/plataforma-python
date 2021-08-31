@@ -72,32 +72,33 @@ class Chat:
         # tempo para entender oq está acontecendo
         sleep(2)
 
-    def Question(self, msg):
+    def Question(self, msg, wait=True):
         print(color.END + color.DARKCYAN + color.BOLD +
               "\n# [{0}] ".format(self._student) + color.END + color.YELLOW + msg + color.END)
         # tempo para entender oq está acontecendo
         sleep(2)
-        self.NextStep()
+        if wait:
+            self.NextStep()
 
     def ShowCode(self, code, wait=True, run=True):
-        print(color.END + color.BOLD + "\n[Python code] - START" + color.END)
+        print(color.END + color.BOLD + "\n# [Python code] - START" + color.END)
         print(color.END + color.BOLD + color.BLUE +
               "{}".format(code) + color.END)
         if run:
             print(color.END + color.BOLD +
-                  "[Python code] - EXEC:\n" + color.END)
+                  "# [Python code] - EXEC:\n" + color.END)
             exec(code)
         if wait:
             self.AskEnter()
 
         print(color.END + color.BOLD +
-              "[Python code] - END\n" + color.END)
+              "# [Python code] - END\n" + color.END)
 
     def PrintResult(self, msg):
-        print(color.END + color.CYAN + "RESULTADO: {}".format(msg) + color.END)
+        print(color.END + color.CYAN + "# RESULTADO: {}".format(msg) + color.END)
 
     def AskEnter(self):
-        print(color.END + color.PURPLE + color.BOLD + "# [Fino] " +
+        print(color.END + color.PURPLE + color.BOLD + "# [{0}] ".format(self._teacher) +
               color.END + color.BOLD + pressEnterMessages[random.randint(0, len(pressEnterMessages)-1)] + color.END)
         input()
 
